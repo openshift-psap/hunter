@@ -1,4 +1,12 @@
 [[package]]
+name = "asn1crypto"
+version = "1.5.1"
+description = "Fast ASN.1 parser and serializer with definitions for private keys, public keys, certificates, CRL, OCSP, CMS, PKCS#3, PKCS#7, PKCS#8, PKCS#12, PKCS#5, X.509 and TSP"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "atomicwrites"
 version = "1.4.1"
 description = "Atomic file writes."
@@ -46,28 +54,6 @@ python-versions = ">=3.6"
 tzdata = ["tzdata"]
 
 [[package]]
-name = "black"
-version = "22.12.0"
-description = "The uncompromising code formatter."
-category = "dev"
-optional = false
-python-versions = ">=3.7"
-
-[package.dependencies]
-click = ">=8.0.0"
-mypy-extensions = ">=0.4.3"
-pathspec = ">=0.9.0"
-platformdirs = ">=2"
-tomli = {version = ">=1.1.0", markers = "python_full_version < \"3.11.0a7\""}
-typing-extensions = {version = ">=3.10.0.0", markers = "python_version < \"3.10\""}
-
-[package.extras]
-colorama = ["colorama (>=0.4.3)"]
-d = ["aiohttp (>=3.7.4)"]
-jupyter = ["ipython (>=7.8.0)", "tokenize-rt (>=3.2.0)"]
-uvloop = ["uvloop (>=0.15.2)"]
-
-[[package]]
 name = "cachetools"
 version = "5.5.0"
 description = "Extensible memoizing collections and decorators"
@@ -90,17 +76,6 @@ description = "The Real First Universal Charset Detector. Open, modern and activ
 category = "main"
 optional = false
 python-versions = ">=3.7.0"
-
-[[package]]
-name = "click"
-version = "8.1.7"
-description = "Composable command line interface toolkit"
-category = "dev"
-optional = false
-python-versions = ">=3.7"
-
-[package.dependencies]
-colorama = {version = "*", markers = "platform_system == \"Windows\""}
 
 [[package]]
 name = "colorama"
@@ -395,14 +370,6 @@ optional = false
 python-versions = ">=3.5"
 
 [[package]]
-name = "mypy-extensions"
-version = "1.0.0"
-description = "Type system extensions for programs checked with the mypy type checker."
-category = "dev"
-optional = false
-python-versions = ">=3.5"
-
-[[package]]
 name = "numpy"
 version = "1.24.0"
 description = "Fundamental package for array computing in Python"
@@ -419,12 +386,16 @@ optional = false
 python-versions = ">=3.8"
 
 [[package]]
-name = "pathspec"
-version = "0.12.1"
-description = "Utility library for gitignore style pattern matching of file paths."
-category = "dev"
+name = "pg8000"
+version = "1.31.2"
+description = "PostgreSQL interface library"
+category = "main"
 optional = false
 python-versions = ">=3.8"
+
+[package.dependencies]
+python-dateutil = ">=2.8.2"
+scramp = ">=1.4.5"
 
 [[package]]
 name = "platformdirs"
@@ -472,14 +443,6 @@ description = ""
 category = "main"
 optional = false
 python-versions = ">=3.8"
-
-[[package]]
-name = "psycopg2-binary"
-version = "2.9.9"
-description = "psycopg2 - Python-PostgreSQL Database Adapter"
-category = "main"
-optional = false
-python-versions = ">=3.7"
 
 [[package]]
 name = "py"
@@ -641,6 +604,14 @@ optional = false
 python-versions = ">=3.6"
 
 [[package]]
+name = "ruff"
+version = "0.6.9"
+description = "An extremely fast Python linter and code formatter, written in Rust."
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "scipy"
 version = "1.9.3"
 description = "Fundamental algorithms for scientific computing in Python"
@@ -655,6 +626,17 @@ numpy = ">=1.18.5,<1.26.0"
 test = ["pytest", "pytest-cov", "pytest-xdist", "asv", "mpmath", "gmpy2", "threadpoolctl", "scikit-umfpack"]
 doc = ["sphinx (!=4.1.0)", "pydata-sphinx-theme (==0.9.0)", "sphinx-panels (>=0.5.2)", "matplotlib (>2)", "numpydoc", "sphinx-tabs"]
 dev = ["mypy", "typing-extensions", "pycodestyle", "flake8"]
+
+[[package]]
+name = "scramp"
+version = "1.4.5"
+description = "An implementation of the SCRAM protocol."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+asn1crypto = ">=1.5.1"
 
 [[package]]
 name = "signal-processing-algorithms"
@@ -847,18 +829,17 @@ test = ["pytest (>=6,<8.1.0 || >=8.2.0)", "pytest-checkdocs (>=2.4)", "pytest-co
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<3.13"
-content-hash = "5cc46e5e57ac49496685cee40d5155a9c22992832162d252db0565a363499e87"
+content-hash = "c9d91b5a097f8d3e3240d546270473115509d5d0b8bdc0fe83674caecfe077b7"
 
 [metadata.files]
+asn1crypto = []
 atomicwrites = []
 attrs = []
 autoflake = []
 "backports.zoneinfo" = []
-black = []
 cachetools = []
 certifi = []
 charset-normalizer = []
-click = []
 colorama = []
 dateparser = []
 decorator = []
@@ -881,15 +862,13 @@ iniconfig = []
 isort = []
 mccabe = []
 more-itertools = []
-mypy-extensions = []
 numpy = []
 packaging = []
-pathspec = []
+pg8000 = []
 platformdirs = []
 pluggy = []
 proto-plus = []
 protobuf = []
-psycopg2-binary = []
 py = []
 pyasn1 = []
 pyasn1-modules = []
@@ -904,7 +883,9 @@ requests = []
 rsa = []
 "ruamel.yaml" = []
 "ruamel.yaml.clib" = []
+ruff = []
 scipy = []
+scramp = []
 signal-processing-algorithms = []
 six = []
 slack-sdk = []
