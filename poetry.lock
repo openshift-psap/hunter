@@ -371,7 +371,7 @@ python-versions = ">=3.5"
 
 [[package]]
 name = "numpy"
-version = "1.24.0"
+version = "1.26.4"
 description = "Fundamental package for array computing in Python"
 category = "main"
 optional = false
@@ -620,7 +620,7 @@ optional = false
 python-versions = ">=3.8"
 
 [package.dependencies]
-numpy = ">=1.18.5,<1.26.0"
+numpy = ">=1.18.5,<1.26.5"
 
 [package.extras]
 test = ["pytest", "pytest-cov", "pytest-xdist", "asv", "mpmath", "gmpy2", "threadpoolctl", "scikit-umfpack"]
